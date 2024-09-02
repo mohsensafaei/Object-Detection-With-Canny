@@ -1,3 +1,0 @@
-/mnt/c/Users/Mohsen/Downloads/Compressed/NOJAN/build/CMakeFiles/PREDICT.dir
-/mnt/c/Users/Mohsen/Downloads/Compressed/NOJAN/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Mohsen/Downloads/Compressed/NOJAN/build/CMakeFiles/rebuild_cache.dir
