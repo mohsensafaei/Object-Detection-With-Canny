@@ -26,8 +26,13 @@ Result prediction::process(params& params_){
 }
 
 Result prediction::bbox(params& params_){
+    if (params_.contours.empty()) {
+        ERROR_LOG("No contours found");
+        return FAILED;
+    }
+
     for (size_t i = 0; i < params_.contours.size(); i++) {
-    params_.boundingRect |= cv::boundingRect(params_.contours[i]);
+        params_.boundingRect |= cv::boundingRect(params_.contours[i]);
     }
     cv::rectangle(params_.result, params_.boundingRect, cv::Scalar(0, 255, 0), 2);
     return SUCCESS;
