@@ -2,7 +2,7 @@
 #include <iostream>
 #include <filesystem> 
 #include "ClogiPy.h"
-#include "pred_utils.h"
+#include "Pred_utils.h"
 #include "Prediction.h"
 
 namespace fs = std::filesystem;

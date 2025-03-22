@@ -1,7 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <filesystem> 
-#include "pred_utils.h"
+#include "Pred_utils.h"
 #include "Prediction.h"
 #include "ClogiPy.h"
 
@@ -18,8 +18,8 @@ Result prediction::process(params& params_){
 
     WARN_LOG("Start to bbox");
     if(!this->bbox(params_)){
-        // std::cout << "ERROR!" << std::endl;
         ERROR_LOG("ERROR");
+        return FAILED;
     }
     RESULT_SUCCESS_LOG("Bbox implemented successfully");
     return SUCCESS;
