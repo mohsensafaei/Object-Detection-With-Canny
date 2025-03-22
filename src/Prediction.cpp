@@ -40,9 +40,18 @@ Result prediction::bbox(params& params_){
 
 
 Result prediction::save_img(std::string inputImagePath, std::string outputFolderPath, params& params_){
+    if (inputImagePath.empty()) {
+        ERROR_LOG("Input image path is empty");
+        return FAILED;
+    }
+
     fs::path inputImageFullPath(inputImagePath);
     std::string outputImageName = "output_" + inputImageFullPath.filename().string();
     fs::path outputImagePath = fs::path(outputFolderPath) / outputImageName;
-    cv::imwrite(outputImagePath.string(), params_.result);
+    
+    if (!cv::imwrite(outputImagePath.string(), params_.result)) {
+        ERROR_LOG("Failed to save image");
+        return FAILED;
+    }
     return SUCCESS;
 }
